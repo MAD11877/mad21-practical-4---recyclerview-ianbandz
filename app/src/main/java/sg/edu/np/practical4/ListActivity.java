@@ -10,16 +10,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class ListActivity extends AppCompatActivity {
+    ArrayList<String> myList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        ImageView img = findViewById(R.id.imageView);
+        for(int i = 0; i < 20; i++){
+            myList.add(String.valueOf(i));
+        }
+
+        ImageView img = findViewById(R.id.recyclerview);
         img.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
