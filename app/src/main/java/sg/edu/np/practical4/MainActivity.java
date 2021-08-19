@@ -20,15 +20,11 @@ public class MainActivity extends AppCompatActivity {
 
         Intent rec = getIntent();
         int value = rec.getIntExtra("id",0);
-        u = new User();
-        u.name = "MAD";
-        u.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
-        u.id = 1;
-        u.followed = false;
+        u = ListActivity.userList.get(value);
 
-        TextView name = findViewById(R.id.txtName);
-        name.setText(u.name + " " + value);
-        TextView description = findViewById(R.id.txtDescription);
+        TextView name = findViewById(R.id.name);
+        name.setText(u.name);
+        TextView description = findViewById(R.id.description);
         description.setText(u.description);
         setFollowBtn();
     }
